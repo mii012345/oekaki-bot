@@ -26,5 +26,5 @@ class Oekaki:
         '''
         c = self.conn.cursor()
 
-        s = 'INSERT INTO word_list(word, level) VALUES ("%s", %s)' % (word, level)
+        s = 'INSERT INTO word_list(word, level) VALUES ("%s", %s)' % (word.encode('utf-8'), level)
         c.execute(s)
