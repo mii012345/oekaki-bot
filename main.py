@@ -28,7 +28,7 @@ async def on_message(message):
         '''
         try:
             oemori.add_word(if_add.group(1), if_add.group(2))
-            await message.channel.send('%sを%sで追加しました！'%(if_add.group(1), if_add.group(2)))
+            await message.channel.send('%sをレベル%sで追加しました！'%(if_add.group(1), if_add.group(2)))
         except:
             await message.channel.send('エラー:追加できませんでした')
             '''

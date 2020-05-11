@@ -25,6 +25,5 @@ class Oekaki:
         User can add word.
         '''
         c = self.conn.cursor()
-
         s = 'INSERT INTO word_list(word, level) VALUES ("%s", %s)' % (word, level)
         c.execute(s)
