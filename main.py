@@ -27,7 +27,7 @@ async def on_message(message):
     if_level = re.compile(u"!start (.+)").search(message.content)
 
     if if_level:
-        await message.channel.send('お絵描き始まるよ！')
+        await message.channel.send('レベル%sのお絵描き始まるよ！'%if_level.group(1))
         await message.channel.send('絵を書く人にDMするよ。画面共有と視聴の準備をしてね。')
         try:
             oemori.start_oekaki()
