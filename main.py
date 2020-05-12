@@ -47,5 +47,6 @@ async def on_message(message):
     if message.content == "!debug":
         user = client.get_user(message.author.id)
         await user.send("aaa")
+        oemori.get_word(if_level.group(1))
 
 client.run(Token)

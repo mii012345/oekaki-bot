@@ -27,7 +27,11 @@ class Oekaki:
         お絵描きのお題を取得します。
         Get word to draw and answer
         '''
-        pass
+        c = self.conn.cursor()
+        s = 'SELECT word FROM word_list WHERE level=%s;'%level
+        c.execute(s)
+        for row in c.fetchall():
+            print(row[0])
 
     def add_word(self, word, level):
         '''
@@ -35,5 +39,5 @@ class Oekaki:
         User can add word.
         '''
         c = self.conn.cursor()
-        s = 'INSERT INTO word_list(word, level) VALUES ("%s", %s)' % (word, level)
+        s = 'INSERT INTO word_list(word, level) VALUES ("%s", %s);' % (word, level)
         c.execute(s)
